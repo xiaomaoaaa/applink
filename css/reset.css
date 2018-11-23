@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+
+/* CSS Reset*/
+
+body,
+div,
+p,
+ul,
+ol,
+li,
+textarea,
+form,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+dl,
+dt,
+dd,
+img,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+dialog,
+figure,
+hgroup {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+html {
+    font-size: 625%;
+}
+
+input,
+button,
+select,
+textarea {
+    border: none;
+    outline: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+} 
+
+img {
+    border: 0;
+}
+
+section,
+article,
+aside,
+header,
+footer,
+nav,
+dialog,
+figure,
+hgroup {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+    clear: both;
+}
+* {
+     box-sizing: border-box;-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust: 100%;word-break:break-all;word-wrap:break-word;
+}
+

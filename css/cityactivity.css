@@ -1,0 +1,40 @@
+
+body{
+    font-size: 12px;
+    line-height: 2;
+    height: 100%;
+}
+.fixeddiv{
+    background: rebeccapurple;
+    position: fixed;
+    bottom: 0;
+    height: 5rem;
+    width: 100%;
+    display: none;
+}
+.fixeddivbg{
+    background:rgba(0, 0,0, 0.6);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    display: none;
+
+}
+button{border: 1px salmon solid;
+margin: 0.3rem auto;}
+#toast{
+    background:rgba(0, 0,0, 0.6);
+    position: fixed;
+    height: 0.6rem;
+    width: 60%;
+    line-break: 0.6rem;
+    top:50%;
+    left:50%;
+    margin-left: -30%;
+    margin-top: -0.3rem;
+    display: none;
+    z-index: 5;
+    color: #fff;
+    text-align: center;
+}

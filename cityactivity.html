@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone = no" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/cityactivity.css">
+    <script type="text/javascript" src="js/reponse.js"></script>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h2>标题默认为热门留学活动</h2>
+        <div class="summary">
+            <p>主讲人：新通大学高级教师</p>
+            <p>时间：2018-10-22-2018-10-23</p>
+            <p>地点：新通大学高级教师</p>
+            <p>预约截止时间：2018-10-22</p>
+        </div>
+        <div class="strengths">
+            <h3>活动亮点</h3>
+            <div class="list">
+                <p>1、新通大学高级教师</p>
+                <p>2、2018-10-22-2018-10-23</p>
+                <p>3、新通大学高级教师</p>
+            </div>
+        </div>
+        <div class="details">
+            <h3>具体详情</h3>
+            <div class="detailscon">
+                <p>1、新通大学高级教师</p>
+                <p>2、2018-10-22-2018-10-23</p>
+                <p>3、新通大学高级教师</p>
+            </div>
+        </div>
+        <button id="apply">报名参加活动</button>
+        <div class="relevantnews">
+            <h3>具体详情</h3>
+            <ul class="list">
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+                <li>1、新通大学高级教师</li>
+                <li>2、2018-10-22-2018-10-23</li>
+                <li>3、新通大学高级教师</li>
+            </ul>
+        </div>
+    </div>
+    <div class="fixeddivbg" id="fixeddivbg">
+        <div class="fixeddiv" id="fixeddiv">
+            <h3>留下联系方式，即可成功参与活动</h3>
+            <div class="form">
+                <div class="name clearfix">
+                    <div class="iconbg">
+                        <input type="text" placeholder="姓名" name="name" class="f32" id="name">
+                    </div>
+                </div>
+                <div class="phoneNo clearfix">
+                    <div class="iconbg">
+                        <input type="text" placeholder="联系电话" name="phoneNo" id="phoneNo">
+
+                    </div>
+                </div>
+                <div class="wx clearfix">
+                    <div class="iconbg">
+                        <input type="text" placeholder="微信号" name="wx" id="wx">
+                    </div>
+                </div>
+                <button id="appoint" disabled>立即预约</button>
+            </div>
+        </div>
+    </div>
+    <div id="toast">请正确输入手机号码</div>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/applink.js"></script>
+    <script type="text/javascript" src="js/jsBbridge.js"></script>
+    <script type="text/javascript">
+        // console.log(applink())
+        transmit("onclick",{test:1})
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var $name = $("#name"), $phoneNo = $("#phoneNo")
+            //禁止穿透滚动
+            $("#fixeddivbg").on("touchmove", function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            })
+             //点击报名显示弹框
+            $("#apply").on("click", function () {
+                $("#fixeddivbg").show()
+                $("#fixeddiv").show()
+            })
+            //验证立即预约按钮是否可点击
+            $("#name").on("input", function () {
+                var name = $(this).val(), phone = $phoneNo.val()
+                if (name != "" && phone != "") {
+                    $("#appoint").removeAttr("disabled", false)
+                } else {
+                    $("#appoint").attr("disabled", true)
+                }
+            })
+             //验证立即预约按钮是否可点击
+            $("#phoneNo").on("input", function () {
+                var phone = $(this).val(), name = $name.val()
+                if (name != "" && phone != "") {
+                    $("#appoint").removeAttr("disabled", false)
+                } else {
+                    $("#appoint").attr("disabled", true)
+                }
+            })
+             //验证手机号码输入框失去焦点的时候手机是否输入正确
+            $("#phoneNo").on("blur", function () {
+                var phoneNoreg = /^1(3|4|5|7|8|9)\d{9}$/;
+                if (!phoneNoreg.test($phoneNo.val())) {
+                    toast("请输入正确的手机号")
+                    return
+                }
+            })
+        })
+        // 自定义toast
+        function toast(text) {
+            $("#toast").html(text)
+            $("#toast").show();
+            setTimeout(function () {
+                $("#toast").hide();
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
