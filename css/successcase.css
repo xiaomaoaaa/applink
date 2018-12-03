@@ -1,0 +1,31 @@
+body{
+    font-size: 12px;
+    line-height: 2;
+    height: 100%;
+}
+.relevantnews li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.relevantnews li img {
+    width: 1.86rem;
+    height: 1.86rem;
+}
+
+.relevantnews li>div {
+    width: 4.5rem;
+    margin-right: 0.3rem;
+}
+.relevantnews li>div h4 {
+    font-size: 0.32rem;
+    line-height: 0.46rem;
+    width: 100%;
+}
+
+.relevantnews li>div p {
+    font-size: 0.24rem;
+    display: flex;
+    justify-content: space-between;
+}

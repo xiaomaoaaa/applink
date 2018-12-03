@@ -38,3 +38,32 @@ margin: 0.3rem auto;}
     color: #fff;
     text-align: center;
 }
+.relevantnews li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.relevantnews li img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.relevantnews li>div {
+    width: 4.5rem;
+    margin-left: 0.3rem;
+}
+.relevantnews li>div h4 {
+    font-size: 0.32rem;
+    line-height: 0.46rem;
+    width: 100%;
+}
+
+.relevantnews li>div p {
+    font-size: 0.24rem;
+    display: flex;
+    justify-content: space-between;
+}
+.closeform{
+    padding-left: 0.6rem;
+}

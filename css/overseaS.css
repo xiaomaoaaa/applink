@@ -1,0 +1,72 @@
+body {
+    font-size: 12px;
+    line-height: 2;
+    height: 100%;
+    background: #f5f5f5;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#appHide {
+    display: none;
+}
+
+.cardImg {
+    width: 6.9rem;
+    padding: 0.36rem 0 0.64rem;
+    margin: -0.48rem auto 1rem;
+    border-radius: 0.18rem;
+    box-shadow: 0 0 0.18rem 0 rgba(182, 124, 0, 0.27);
+    background: #fff;
+    z-index: 2;
+    position: relative;
+}
+.cardImg img{
+	margin-top: 0.6rem;
+}
+
+.cardImg img:nth-of-type(2){
+	margin-top: 0.7rem;
+}
+.cardImg img:nth-of-type(13){
+	margin-top: 0.96rem;
+}
+.btngroup{
+	display: flex;
+	padding: 0.17rem 0.3rem 0.17rem;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 7.5rem;
+    z-index: 3;
+    height: 1.22rem;
+    background:#fff;
+    background-size:7.5rem 0.8rem;
+    box-shadow: 0 -0.01rem 0.2rem 0 rgba(193, 193, 193, 1);
+}
+.contact{
+    width: 1.2rem;
+    height: 0.88rem;
+    background:url("../img/icon_bottom_phone.png") no-repeat center 0.06rem;
+    background-size:0.36rem 0.26rem; 
+    color: #666;
+    font-size:0.28rem;
+    border-radius:0.44rem;
+    margin-right: 0.5rem;
+    padding-top: 0.32rem
+} 
+.onlineS{
+    width: 5.2rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background: #fdd673;
+    color: #7b5903;
+    font-size:0.34rem;
+    border-radius:0.44rem;
+    text-align: center;
+}

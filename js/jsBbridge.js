@@ -22,11 +22,12 @@ window.jsBbridge = function(callback) {
         document.documentElement.removeChild(WVJBIframe)
     }, 0);
 };
-function transmit(name,params) {//String name ,Object params
-    console.log(name,params)
-    const ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
-    const isIos = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
-    const isAndroid =ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1
+
+function transmit(name, params) { //String name ,Object params
+    console.log(name, params)
+    var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
+    var isIos = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
+    var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1
     if (isIos) { //ios
         jsBbridge(function(bridge) {
             bridge.callHandler(
