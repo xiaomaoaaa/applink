@@ -1,10 +1,10 @@
-window.jsBbridge = function(callback) {
+window.jsBbridge = function (callback) {
     if (window.WebViewJavascriptBridge) {
         return callback(WebViewJavascriptBridge);
     } else {
         document.addEventListener(
             'WebViewJavascriptBridgeReady',
-            function() {
+            function () {
                 callback(WebViewJavascriptBridge)
             },
             false
@@ -18,27 +18,38 @@ window.jsBbridge = function(callback) {
     WVJBIframe.style.display = 'none';
     WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
     document.documentElement.appendChild(WVJBIframe);
-    setTimeout(function() {
+    setTimeout(function () {
         document.documentElement.removeChild(WVJBIframe)
     }, 0);
 };
 
 function transmit(name, params) { //String name ,Object params
-    console.log(name, params)
-    var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
-    var isIos = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
-    var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1
     if (isIos) { //ios
-        jsBbridge(function(bridge) {
-            bridge.callHandler(
-                name, params,
-                //回调函数
-                function(responseData) {
-
-                }
-            )
-        })
+        if (params) {
+            jsBbridge(function (bridge) {
+                bridge.callHandler(
+                    name, params,
+                    //回调函数
+                    function (responseData) {
+                    }
+                )
+            })
+        } else {
+            jsBbridge(function (bridge) {
+                bridge.callHandler(
+                    name, {},
+                    //回调函数
+                    function (responseData) {
+                    }
+                )
+            })
+        }
     } else { //android
-        swapp.onClickSignUp(name, params);
+        let temparams = JSON.stringify(params);
+        if (params) {
+            swapp[name](temparams);
+        } else {
+            swapp[name]();
+        }
     }
 }

@@ -52,7 +52,7 @@ img {
 .contact{
     width: 1.2rem;
     height: 0.88rem;
-    background:url("../img/icon_bottom_phone.png") no-repeat center 0.06rem;
+    background:url("../image/icon_bottom_phone.png") no-repeat center 0.06rem;
     background-size:0.36rem 0.26rem; 
     color: #666;
     font-size:0.28rem;

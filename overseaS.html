@@ -14,36 +14,29 @@
 </head>
 
 <body>
-    <div class="top clearfix">
-        <div class="f28">
-            <div class="text">
-                <p class="f28">出国全程通<span>立享优质留学服务</span></p>
-            </div>
-        </div>
-        <div>
-            <button class="f28" id="applink">打开A</button>
-        </div>
+    <div class="top">
+        <img src="image/img_banner_download.png">
     </div>
     <div class="detail_main">
-        <img src="img/bg_Australia_navbar.jpg" id="appHide">
-        <img src="img/bg_Australia_top.jpg">
+        <img src="image/bg_Australia_navbar.jpg" id="appHide">
+        <img src="image/bg_Australia_top.jpg">
         <div class="cardImg">
-            <img src="img/img_Australia_item_1.jpg">
-            <img src="img/img_Australia_item_2.jpg">
-            <img src="img/img_Australia_item_3.jpg">
-            <img src="img/img_Australia_item_4.jpg">
-            <img src="img/img_Australia_item_5.jpg">
-            <img src="img/img_Australia_item_6.jpg">
-            <img src="img/img_Australia_item_7.jpg">
-            <img src="img/img_Australia_item_8.jpg">
-            <img src="img/img_Australia_item_9.jpg">
-            <img src="img/img_Australia_item_10.jpg">
-            <img src="img/img_Australia_item_11.jpg">
-            <img src="img/img_Australia_item_12.jpg">
-            <img src="img/img_Australia_item_13.jpg">
+            <img src="image/img_Australia_item_1.jpg">
+            <img src="image/img_Australia_item_2.jpg">
+            <img src="image/img_Australia_item_3.jpg">
+            <img src="image/img_Australia_item_4.jpg">
+            <img src="image/img_Australia_item_5.jpg">
+            <img src="image/img_Australia_item_6.jpg">
+            <img src="image/img_Australia_item_7.jpg">
+            <img src="image/img_Australia_item_8.jpg">
+            <img src="image/img_Australia_item_9.jpg">
+            <img src="image/img_Australia_item_10.jpg">
+            <img src="image/img_Australia_item_11.jpg">
+            <img src="image/img_Australia_item_12.jpg">
+            <img src="image/img_Australia_item_13.jpg">
         </div>
     </div>
-   
+
     <div class="btngroup">
         <div class="contact">
             联系顾问
@@ -52,27 +45,29 @@
             在线预约
         </div>
     </div>
-    <div id="goToTop"><a href="javascript:;"></a></div>
+    <div id="goToTop">
+        <a href="javascript:;"></a>
+    </div>
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/public.js"></script>
     <script type="text/javascript">
-    $(function() {
-        if (share == 1) {
-            $("#appHide").show()
-            $(".contact,.onlineS,#applink").on("click",function(){
-                applink()
-            })
-        } else {
-            $("#appHide").hide()
-            $(".contact").on("click",function(){
-                transmit("contactConsultant",{})
-            })
-            $(".onlineS").on("click",function(){
-                transmit("onlineBooking",{})
-            })
-        }
+        $(function () {
+            if (share == 1) {
+                $("#appHide").show()
+                $(".contact,.onlineS,#applink").on("click", function () {
+                    applink()
+                })
+            } else {
+                $("#appHide").hide()
+                $(".contact").on("click", function () {
+                    transmit("contactConsultant")
+                })
+                $(".onlineS").on("click", function () {
+                    transmit("onlineBooking")
+                })
+            }
 
-    });
+        });
     </script>
 </body>
 

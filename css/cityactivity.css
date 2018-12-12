@@ -1,34 +1,123 @@
-
-body{
+body {
     font-size: 12px;
     line-height: 2;
     height: 100%;
 }
-.fixeddiv{
-    background: rebeccapurple;
-    position: fixed;
-    bottom: 0;
-    height: 5rem;
-    width: 100%;
-    display: none;
-}
-.fixeddivbg{
-    background:rgba(0, 0,0, 0.6);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top:0;
-    display: none;
 
+.detail_main{
+    background: url("../image/bg_city_top.jpg") no-repeat center top;
+    background-size: 100% auto;
 }
-button{border: 1px salmon solid;
-margin: 0.3rem auto;}
+
+
+
+
+.relevantnews{
+    padding: 0.8rem 0.3rem 0.3rem;
+}
+.relevantnews li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem 0;
+}
+
+.relevantnews li img {
+    width: 1.8rem;
+    height: 1.35rem;
+    border-radius: 0.08rem;
+    margin-right: 0.5rem;
+}
+.relevantnews li>div{
+    width: 4.6rem;
+}
+.relevantnews li>div h4 {
+    font-size: 0.32rem;
+    line-height: 0.45rem;
+    width: 100%;
+    color: #333;
+    height: 0.9rem;
+}
+
+.relevantnews li>div p {
+    font-size: 0.24rem;
+    color: #999;
+    background: url("../image/icon_clock_gray.png") no-repeat left center;
+    background-size: 0.22rem 0.22rem;
+    padding-left: 0.32rem;
+}
+.summary,.highlight,.specific{
+    width: 6.9rem;
+    
+}
+.summary{
+    padding: 0.6rem 0.3rem 0;
+    color: #999;
+    font-weight: bold;
+    font-size: 0.36rem;
+    text-align: justify;
+    margin:0 auto 0.7rem;
+}
+.summary >div{
+    padding-bottom: 0.4rem;
+    color: #333;
+    font-size: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.summary >div:nth-of-type(2){
+    align-items:flex-start;
+}
+.summary p {
+    padding-bottom: 0;
+}
+.summary p span{
+    display: inline-block;
+    color: #807c74;
+    /* padding-left: 0.6rem; */
+}
+.summary >div img{
+    width: 0.32rem;
+    margin: 0 0.3rem 0 0
+}
+.summary >div p{
+    width: 5.68rem;  line-height: 1.4;
+}
+.summary >div:nth-of-type(1) img{
+    height: 0.34rem;
+}
+.summary >div:nth-of-type(2) img{
+    height: 0.38rem;
+    margin-top: 0.03rem;
+  
+}
+.summary >div:nth-of-type(3) img{
+    height: 0.32rem;
+}
+
+.detail_main {
+    margin-bottom: 0;
+}
+.singup{
+    display: block;
+    width: 6.9rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background: #f7d782;
+    color: #7b5903;
+    font-size:0.34rem;
+    border-radius:0.44rem;
+    text-align: center;
+    margin:0.6rem auto 0.8rem;
+}
+
 #toast{
-    background:rgba(0, 0,0, 0.6);
+     background:rgba(0, 0,0, 0.6);
     position: fixed;
     height: 0.6rem;
     width: 60%;
-    line-break: 0.6rem;
     top:50%;
     left:50%;
     margin-left: -30%;
@@ -37,33 +126,157 @@ margin: 0.3rem auto;}
     z-index: 5;
     color: #fff;
     text-align: center;
+    border-radius: 0.1rem;
 }
-.relevantnews li {
+
+.highlight{
+    margin:0 auto 0.5rem;
+}
+.highlight h2{
+    font-size: 0.38rem;
+    color: #333;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+
+}
+.highlight li{
+    font-size: 0.3rem;
+    color: #333;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+    justify-content: flex-start;
+   
+ 
 }
+.highlight li span{
+    width: 0.06rem;
+    height: 0.06rem;
+    background: #333;
+    border-radius:50%; 
+    margin:0.25rem 0.1rem 0 0;
+}
+.highlight li p{
+    width: 6.89rem;
+    padding-bottom: 0;
+    line-height:1.8;
+    margin-bottom: 0.5rem;
+}
+.details{
+    padding: 0;
+}
+.specific{
+    margin: 0 auto;
+    padding-top: 0.8rem;
+   
+}
+.specific h2{
+    font-size: 0.38rem;
+    color: #333;
+    font-weight: bold;
+    line-height: 1;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    border-bottom: solid 1px #ccc;
+}
+.fixeddiv{
+    background: #fff;
+    position: fixed;
+    bottom: 0;
 
-.relevantnews li img {
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.relevantnews li>div {
-    width: 4.5rem;
-    margin-left: 0.3rem;
-}
-.relevantnews li>div h4 {
-    font-size: 0.32rem;
-    line-height: 0.46rem;
     width: 100%;
+    display: block; box-sizing: border-box;
+    padding: 0.5rem 0 0.7rem 0.3rem;
+    border-top-left-radius: 0.16rem;
+    border-top-right-radius: 0.16rem;
 }
-
-.relevantnews li>div p {
-    font-size: 0.24rem;
-    display: flex;
-    justify-content: space-between;
+.fixeddiv h3{
+    font-size: 0.34rem;
+    font-weight: bold;
+    color: #333;
+    
+}
+.fixeddivbg{
+    background:rgba(0, 0,0, 0.6);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    display: block;
 }
 .closeform{
-    padding-left: 0.6rem;
+    position: absolute;
+    z-index: 2;
+    top:0.3rem;
+    right: 0.3rem;
+    background: url("../image/icon_pay_close@3x.png") no-repeat center;
+    background-size: 0.32rem 0.32rem;
+    width: 0.32rem;
+    height: 0.32rem;
+}
+.form{
+    margin-top: 0.32rem;
+}
+.iconbg{
+    border-bottom: 1px solid #d9d9d9;
+   
+    display: flex;justify-content: flex-start;
+    align-items: center;
+}
+.iconbg label{
+    color: #333;
+    font-size: 0.32rem;
+    text-align: justify;
+    width: 1.4rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+}
+.iconbg input{
+    color: #333;
+    padding-left: 0.1rem;
+    font-size: 0.32rem;
+    width: 4.7rem;
+}
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #bababa;
+    font-size: 0.32rem;
+  }
+  .iconbg label:after {
+    content:'';
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    height: 0;
+    line-height: 0;
+  }
+  #appoint{
+    display: block;
+    width: 6.9rem;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background: #fdd673;
+    color: #7b5903;
+    font-size:0.34rem;
+    border-radius:0.44rem;
+    text-align: center;
+    margin:0.26rem auto 0;
+}
+.iconbg span{
+    font-size: 0.24rem;
+    color: #bababa;
+}
+#appoint[disabled]{
+    background: #fff5d9;
+    color: #fae3ac;
+}
+.wxerrortip{
+    margin-top: 0.2rem;
+}
+.wxerrortip p{
+   font-size: 0.24rem;
+   color: #ed4c2e;
+   height: 0.34rem;
+   line-height: 0.34rem;
+   display: none;
 }

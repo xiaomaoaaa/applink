@@ -3,61 +3,29 @@
     top: 0;
     background: #202c3a;
     width: 100%;
-    height: 1.2rem;
+    height: 1.24rem;
     display: none;
     z-index: 3;
 }
-
-.top div {
-    float: left;
-}
-
-.top>div:nth-child(1) {
-    background: url("../img/img_logo@2x.png") no-repeat 0.32rem center;
-   width: 73%;
-    background-size: 0.7rem, 0.7rem;
-    height: 1.2rem;
-}
-
-.top>div:nth-child(2) {
-    width: 27%;
-    height: 1.2rem;
-}
-
-.top .text {
-    padding: 0 0.2rem 0 1.2rem;
-    color: #fff;
-    line-height: 1.2rem;
-    font-size: 0.3rem;
-}
-.top .text p span{
-    font-size: 0.24rem;
-    padding-left: 0.3rem;
-}
-
-.top #applink {
-    width: 1.48rem;
-    height: 0.74rem;
-    border-radius: 0.08rem;
-    background: #0b3966;
-    color: #fff;
-    margin: 0.23rem auto;
-    display: block;
-    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .3);
-    box-shadow: 0 3px 9px rgba(0, 0, 0, .3);
+.top img{
+    width: 100%;
+    height: 1.24rem;
 }
 .detail_main {
-    margin-top: 1.2rem;
+    /* margin-top: 1.2rem; */
     margin-bottom: 1.5rem;
 }
 
 .more{
     position: absolute;
     bottom:0;
-    width: 6.9rem;
     display: none;
-    background: #fff;
-    height: 3.5rem;
+    background:url("../image/img_content_arrow.png") no-repeat ;
+    height: 2rem;
+    background-size: 7.5rem 2rem;
+
+    left:0;
+    width: 7.5rem;
 }
 /* 单行隐藏 */
 .sHide{
@@ -80,7 +48,7 @@
     z-index: 3;
     width: 1.46rem;
     height: 1.46rem;
-    background: url("../img/icon_to_up.png") no-repeat center;
+    background: url("../image/icon_to_up.png") no-repeat center;
     background-size: 1.46rem 1.46rem;
     display: none;
 }
@@ -97,6 +65,7 @@
     font-size: 0.36rem;
     color: #333;
     text-align: justify;
+    height: auto;
 }
 .details img{
     display: block;
@@ -118,10 +87,16 @@
     font-size:0.34rem;
     border-radius:0.44rem;
     text-align: center;
-    margin:0.3rem auto;
+    margin:0.6rem auto 0.8rem;
+}
+.applinkimg{
+	display: block;
+    width: 6.9rem;
+    height:3.34rem;
+    margin:0.6rem auto 0.8rem;
 }
 .collection{ 
-    background:#f7d782 url("../img/icon_h5_heart.png") no-repeat 2.44rem center;
+    background:#f7d782 url("../image/icon_h5_heart.png") no-repeat 2.44rem center;
     background-size: 0.38rem 0.32rem;
     padding-left:3.14rem;
     text-align: left;
@@ -142,7 +117,7 @@
 .release {
     display: flex;
     justify-content: space-between;
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
     font-size: 0.28rem;
 }
 .release p:nth-of-type(1){
@@ -156,6 +131,7 @@
    font-weight: bold;
    font-size: 0.46rem;
    line-height: 0.6rem;
+   height: 1.2rem;
 }
 .tag{
     display: flex;
@@ -187,5 +163,5 @@
     font-size: 0.38rem;
     font-weight: bold;
     color: #333;
-    line-height: 0.38rem;
+    line-height: 0.38rem;   
 }

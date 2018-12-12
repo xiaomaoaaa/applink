@@ -14,18 +14,8 @@
 </head>
 
 <body>
-    <div class="top clearfix">
-        <div class="f28">
-            <div class="text">
-                <p class="f28">出国全程通
-                    <span>立享优质留学服务</span>
-                </p>
-
-            </div>
-        </div>
-        <div>
-            <button class="f28" id="applink">打开A</button>
-        </div>
+    <div class="top">
+        <img src="image/img_banner_download.png">
     </div>
     <div class="detail_main">
         <div class="detail_main_top">
@@ -75,7 +65,7 @@
                 4. 文章下方增加APP下载引导海报，点击后跳转APP下载页面 5. 下载引导海报下方显示相关资讯，具体显示内容同APP内该篇文章下的【相关资讯】</p>
             <p>2、2018-10-22-2018-10-23</p>
             <p>3、新通大学高级教师</p>
-            <img src="img/img_Australia_item_13.jpg">
+            <img src="image/img_Australia_item_13.jpg">
             <p>
                 标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动
             </p>
@@ -83,7 +73,9 @@
                 4. 文章下方增加APP下载引导海报，点击后跳转APP下载页面 5. 下载引导海报下方显示相关资讯，具体显示内容同APP内该篇文章下的【相关资讯】</p>
             <p>2、2018-10-22-2018-10-23</p>
             <p>3、新通大学高级教师</p>
-            <p><img src="img/img_Australia_item_13.jpg"></p>
+            <p>
+                <img src="image/img_Australia_item_13.jpg">
+            </p>
             <p>
                 标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动标题默认为热门留学活动
             </p>
@@ -91,16 +83,12 @@
                 4. 文章下方增加APP下载引导海报，点击后跳转APP下载页面 5. 下载引导海报下方显示相关资讯，具体显示内容同APP内该篇文章下的【相关资讯】</p>
             <p>2、2018-10-22-2018-10-23</p>
             <p>3、新通大学高级教师</p>
-            <!-- <img src="img/img_Australia_item_13.jpg"> -->
+            <!-- <img src="image/img_Australia_item_13.jpg"> -->
             <div class="tag">
-                <span class="sHide">标签标签标标签标签标签标签标签标签标签标签签标签标签标签标签标签</span>
-                <span class="sHide">标标签</span>
-                <span class="sHide">标标签</span>
-                <span class="sHide">标签标签签</span>
-                <span class="sHide">标签签</span>
+
             </div>
             <button class="collection">收藏文章</button>
-            <button class="more">查看更多》</button>
+            <button class="more"></button>
         </div>
         <button class="applinkbtn">打开出国全程通APP阅读全文</button>
         <div class="divid"></div>
@@ -108,7 +96,7 @@
             <h3>相关资讯</h3>
             <ul class="list">
                 <li>
-                    <img src="img/test.jpg" width="100%" />
+                    <img src="image/test.jpg" width="100%" />
                     <div>
                         <h4 class="mHide">新通大学新通大学高级教师新新通大学新通大学新通大学高级教师新通大学高级教师新通大学高师新通大学高级教师新通大学高级教师新通大学高师新通大学高师</h4>
                         <p>
@@ -118,7 +106,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="img/test.jpg" width="100%" />
+                    <img src="image/test.jpg" width="100%" />
                     <div>
                         <h4 class="mHide">新通大学新通大学高级教师新新通大学新通大学新通大学高级教师新通大学高级教师新通大学高师新通大学高级教师新通大学高级教师新通大学高师新通大学高师</h4>
                         <p>
@@ -128,9 +116,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="img/test.jpg" width="100%" />
+                    <img src="image/test.jpg" width="100%" />
                     <div>
-                        <h4 class="mHide">新通大学新通大学高级教师新新通大学新通大学新通大学高级教师新通大学高级教师新通大学高师新通大学高级教师新通大学高级教师新通大学高师新通大学高师</h4>
+                        <h4 class="mHide">新通大学新通大学高级</h4>
                         <p>
                             <span>2018-10-23</span>
                             <span class="sHide">世界世界大学世界大学世界大学大学</span>
@@ -140,13 +128,25 @@
             </ul>
         </div>
     </div>
-    <!--  <div id="goToTop"><a href="javascript:;">点我回到页面顶部</a></div> -->
+    <div id="goToTop">
+        <a href="javascript:;"></a>
+    </div>
+    <input id="tags" type="hidden" name="tags" value="加拿大留学 加拿大留学申请 麦吉尔大学">
     <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" src="js/public.js?ddddd"></script>
     <script type="text/javascript">
         $(function () {
-            // $('#goToTop').goToTop();  
-
+            var tags = $("#tags").val().split(/\s+/);//空格分开字符串成数组
+            console.log(tags)
+            var str = "";
+            $.each(tags, function (index, el) {
+                str += "<span class='sHide'>" + el + "</span>"
+            });
+            $(".tag").append(str)
+            $(".collection").on("click", function () {
+                transmit("collectRecommend")
+                }
+            )
         });
     </script>
 </body>

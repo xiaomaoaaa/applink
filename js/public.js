@@ -1,5 +1,5 @@
     var share = getParameter("share");
-   
+
     if (share == 1) {
         $(".top").show();
         $(".applinkbtn").show();
@@ -10,36 +10,36 @@
         var detailsH = $('.details').height();
         if (detailsH <= 800) {
             $(".more").hide();
-            $(".details").css({
-                "height": "auto"
-            })
+
         } else {
             $(".more").show();
             $(".details").css({
-                "height": 800 + "px"
+                "maxHeight": 800 + "px"
             })
         }
     } else {
-    
+
         $(".top").hide();
         $(".applinkbtn").hide();
         $(".detail_main").css({
             marginTop: '0',
         });
     }
-  
+
     $(".details").on("click", ".more", function() {
         $(this).closest(".details").css({
-            "height": "auto"
+            "maxHeight": 80000000 + "px"
         })
         $(this).hide();
     })
 
+
+
     // jQuery返回顶部插件 分享出去之后不需要
     $.fn.goToTop = function() {
-        if(share!=1){
-            return
-        }
+        //        if(share==1){
+        //            return
+        //        }
         // 判断如果窗口滚动距离小于0，隐藏按钮
         if ($(window).scrollTop() < 0) {
             $('#goToTop').hide();
@@ -56,24 +56,34 @@
         // 给这个按钮绑定一个click事件
         this.bind('click', function() {
             $('html ,body').scrollTop(0)
+
             return false;
         });
     };
     $('#goToTop').goToTop();
-    var setypeId = getParameter("setypeId");
-    var url = window.location.href;
-    var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
+
+    var ua = navigator.userAgent; //获取判断用的对象
     var isIos = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
     var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1
     var isIosQQ = (isIos && / QQ/i.test(navigator.userAgent));
     var isAndroidQQ = (isAndroid && /MQQBrowser/i.test(navigator.userAgent) && /QQ/i.test((navigator.userAgent).split('MQQBrowser')));
+    var isWx = /MicroMessenger/i.test(navigator.userAgent);
+    var isWeibo = /WeiBo/i.test(navigator.userAgent);
 
-    function applink() {
-        alert(1111)
-        var rootpath =$("#rootpath").val(),
-        appDownload =$("#appDownload").val(),
-        title =$("#title").val(),
-        introduction =$("#introduction").val();
+    function applink(opt) {
+        var rootpath = $("#rootpath").val(),
+            appDownload = "http://url.cn/58pVs8L",
+            setypeId = $("#setypeId").val(),
+            type = $("#type").val(),
+            param = {
+                'swId': setypeId, //ID
+                'swType': type //唤醒连接中的type， 区分页面用
+            };
+        if (opt) {
+            Object.assign(param, opt);
+        }
+        param = JSON.stringify(param);
+        param = encodeURI(param);
         if (isIos) {
             var regStr_saf = /os [\d._]*/gi;
             var verinfo = ua.match(regStr_saf);
@@ -82,29 +92,21 @@
             if (version_str != "undefined" && version_str.length > 0) {
                 version = version.substring(0, 2);
                 if (parseInt(version) >= 9) {
-                    var param = {
-                        'setitle': title,
-                        'setypeId': setypeId,
-                        'seturl': url,
-                        'introduction': introduction
+                    if (isWx || isWeibo || isIosQQ) {
+                        window.location.href = "https://ssl2.xt.cn/appcg/downloadlx/download.html?textparam=" + param;
+                    } else {
+
+                        window.location.href = "shinyway://cn.igo.shinyway?textparam=" + param
                     }
-                    param = JSON.stringify(param);
-                    param = encodeURI(param);
-                    window.location.href = `https://ssl2.xt.cn/appcg/downloadlx/download.html?textparam=${param}`;
-                    // window.location.href = `https://ssl2.xt.cn/appcg/downloadlx/download.html?setitle=${title}&setypeId=${setypeId}&introduction=${introduction}&seturl=${url}`;
+
                 } else {
-                    if (ua.match(/MicroMessenger/i) == "micromessenger" || ua.match(/WeiBo/i) == "weibo" || isIosQQ) {
+                    if (isWx || isWeibo || isIosQQ) {
+
                         document.write("<img src=" + rootpath + "/resources/gen/image/download_default.png  alt='APP下载' width='100%'/>");
                         return true;
                     } else {
-                        var param = {
-                            setitle: title,
-                            setypeId: setypeId,
-                            seturl: url,
-                            introduction: introduction
-                        }
-                        param = JSON.stringify(param);
-                        window.location.href = "shinyway://cn.igo.shinyway.shoppingDetail?textparam=" + param
+
+                        window.location.href = "shinyway://cn.igo.shinyway?textparam=" + param
                         var clickedAt = +new Date;
                         setTimeout(function() {
                             !window.document.webkitHidden && setTimeout(function() {
@@ -117,18 +119,11 @@
                 }
             }
         } else if (isAndroid) { //安卓
-            if (ua.match(/MicroMessenger/i) == "micromessenger" || ua.match(/WeiBo/i) == "weibo") {
+            if (isWx || isWeibo) {
                 document.write("<img src=" + rootpath + "/resources/gen/image/download_default.png  alt='APP下载' width='100%'/>");
                 return true;
             } else {
-                var param = {
-                    setitle: title,
-                    setypeId: setypeId,
-                    seturl: url,
-                    introduction: introduction
-                }
-                param = JSON.stringify(param);
-                window.location.href = "shinyway://cn.igo.shinyway.shoppingDetail?textparam=" + param
+                window.location.href = "shinyway://cn.igo.shinyway?textparam=" + param
                 var clickedAt = +new Date;
                 setTimeout(function() {
                     !window.document.webkitHidden && setTimeout(function() {
@@ -183,22 +178,37 @@
     };
 
     function transmit(name, params) { //String name ,Object params
-        alert(name)
-        console.log(name, params)
-        var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
-        var isIos = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
-        var isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1
-        if (isIos) { //ios
-            jsBbridge(function(bridge) {
-                bridge.callHandler(
-                    name, params,
-                    //回调函数
-                    function(responseData) {
 
-                    }
-                )
-            })
+        if (isIos) { //ios
+            if (params) {
+
+                jsBbridge(function(bridge) {
+                    bridge.callHandler(
+                        name, params,
+                        //回调函数
+                        function(responseData) {}
+                    )
+                })
+            } else {
+
+                jsBbridge(function(bridge) {
+                    bridge.callHandler(
+                        name, {},
+                        //回调函数
+                        function(responseData) {
+
+                        }
+                    )
+                })
+            }
+
         } else { //android
-            swapp.onClickSignUp(name, params);
+            let temparams = JSON.stringify(params);
+            if (params) {
+                swapp[name](temparams);
+            } else {
+                swapp[name]();
+            }
+
         }
     }
